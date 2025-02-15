@@ -1,4 +1,4 @@
-<!-- nav bar section -->
+<x-ui-layout>
 <nav class="flex flex-wrap items-center justify-between p-3 bg-[#e8e8e5]">
     <div class="text-xl">Bappa Flour mill</div>
     <div class="flex md:hidden">
@@ -58,7 +58,7 @@
 <section class="py-10" id="services">
     <div class="container mx-auto px-20">
         <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                 <img src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp" alt="wheat flour grinding"
                     class="w-full h-64 object-cover">
@@ -337,6 +337,10 @@
         </div>
     </footer>
 </section>
+
+</x-ui-layout>
+<!-- nav bar section -->
+
 
 <script>
     document.getElementById("hamburger").onclick = function toggleMenu() {

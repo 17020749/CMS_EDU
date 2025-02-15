@@ -23,7 +23,7 @@ use Illuminate\Http\Request;
 
     Route::get('/', function (Request $request) {
     return view('welcome');
-    });
+    })->name('dashboard');
     Route::get('/pageTest', function (Request $request) {
         return view('htmlTest');
         });
