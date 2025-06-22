@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id()->index();
             $table->string('semester_code',10)->nullable();
             $table->string('semester_name',40)->nullable();
+            $table->string('banner_img',100)->nullable();
             $table->timestamps();
         });
     }

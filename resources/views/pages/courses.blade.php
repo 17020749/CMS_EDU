@@ -57,7 +57,7 @@
     </div>
 </x-app-layout>
 <script>
-    var token = '{{ session("token") }}';
+    // var token = '{{ session("token") }}';
   getListCourse();
 async function getListCourse() { 
   var html=``;
@@ -65,9 +65,9 @@ async function getListCourse() {
     const response = await $.ajax({
       url: '/api/course',
       method: 'GET',
-      headers: {
-        'Authorization': 'Bearer ' + token
-      }
+      // headers: {
+      //   'Authorization': 'Bearer ' + token
+      // }
     });
       response.data.forEach(element => {
                html+=`<tr

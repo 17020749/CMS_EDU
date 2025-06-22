@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::middleware(['auth.token', 'auth:sanctum'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/', function (Request $request) {
     return view('welcome');
     });
