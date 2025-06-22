@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Danh sách học kỳ') }}
+            {{ __('Banner') }}
         </h2>
     </x-slot>
     
@@ -40,8 +40,8 @@
         </table>
         <!-- modal -->
           <div>
-                    <x-database.modal-semester>
-                    </x-database.modal-semester>
+                    <x-database.modal-banner>
+                    </x-database.modal-banner>
                     <x-modal-delete>
                       Xóa Học kỳ
                     </x-modal-delete>
@@ -65,9 +65,9 @@ async function getListSemester() {
     const response = await $.ajax({
       url: '/api/semester',
       method: 'GET',
-      headers: {
-        'Authorization': 'Bearer ' + token
-      }
+      // headers: {
+      //   'Authorization': 'Bearer ' + token
+      // }
     });
       response.data.forEach(element => {
                html+=`<tr

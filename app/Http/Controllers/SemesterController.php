@@ -26,12 +26,17 @@ class SemesterController extends Controller
         if(Auth::user()->tokenCan('Add:Semester'))
         {
             $semester = Semester::create($request->all());
-
+            request()->validate([
+                'banner_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+        
+            $imageName = time().'.'.request()->banner_img->getClientOriginalExtension();
+            request()->banner_img->move(public_path('images'), $imageName);
             return response()->json(
                 [
                     'status' => 200,
                     'message' => 'Thêm thành công',
-                    'data' => $semester
+                    'data' => $imageName
                 ]
             );
         }

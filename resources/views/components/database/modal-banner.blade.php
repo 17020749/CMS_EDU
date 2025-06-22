@@ -81,6 +81,19 @@
               class=" w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
+          <div class="mb-5">
+          <label
+              for="file_input"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Tải ảnh banner
+            </label>
+          <input 
+          name="banner_img"
+          class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" 
+          id="file_input" 
+          type="file">
+          </div>
         </div>
       </div>
       <div>
@@ -140,16 +153,26 @@ function submit(dataUpdate){
   async function Semester(dataUpdate) {
   try {
     var request
+    const fileInput = document.getElementById('file_input');
+
+    const formData = new FormData();
+    formData.append('semester_code', dataUpdate.semester_code);
+    formData.append('semester_name', dataUpdate.semester_name);
+
+    if (fileInput && fileInput.files.length > 0) {
+      formData.append('banner_img', fileInput.files[0]);
+    }
+
     if(dataUpdate.id==undefined) {
         request ={
            url: `/api/semester`,
       method: 'POST',
-      data:{
-        semester_code:dataUpdate.semester_code,
-        semester_name:dataUpdate.semester_name,
-      },
+      data:formData,
+      processData: false,
+      contentType: false, 
       headers: {
-        'Authorization': 'Bearer ' + token
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        // 'Authorization': 'Bearer ' + token
       } 
         }
     }
@@ -157,12 +180,12 @@ function submit(dataUpdate){
           request ={
            url: `/api/semester/${dataUpdate.id}`,
       method: 'PATCH',
-      data:{
-        semester_code:dataUpdate.semester_code,
-        semester_name:dataUpdate.semester_name,
-      },
+      data:formData,
+      processData: false, 
+      contentType: false, 
       headers: {
-        'Authorization': 'Bearer ' + token
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        // 'Authorization': 'Bearer ' + token
       } 
         }
     }
@@ -171,6 +194,7 @@ function submit(dataUpdate){
   .then(() => {
      HSOverlay.close(document.getElementById('modal-semester'));
      toastr.success(response.message);
+     console.log(response)
      
   })
   } catch (error) {
