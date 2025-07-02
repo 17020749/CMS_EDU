@@ -1,13 +1,10 @@
 <?php
-use App\Http\Controllers\ClassroomController;
-use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\SemesterController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 /*
@@ -20,20 +17,17 @@ use Illuminate\Http\Request;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [DashboardController::class, 'viewDashboard'])->name('dashboard');
+Route::get('/category/{category_name}', [CategoryController::class, 'viewProductForCategory'])->name('productList');
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function (Request $request) {
-    return view('welcome');
-    });
-    Route::get('/courses', [CourseController::class, 'ViewCourses'])->name('courses');
-    Route::get('/semester', [SemesterController::class, 'viewSemester'])->name('semester');
-    Route::get('/department', [DepartmentController::class, 'viewDepartment'])->name('department');
-    Route::get('/class', [ClassroomController::class, 'viewClass'])->name('class');
-    Route::get('/teacher', [TeacherController::class, 'viewTeacher'])->name('teacher');
-    Route::get('/student', [StudentController::class, 'viewStudent'])->name('student');
+    Route::get('/category', [CategoryController::class, 'viewCategories'])->name('category');
+    Route::get('/banner', [BannerController::class, 'viewBanner'])->name('banner');
+    Route::get('/product', [ProductController::class, 'viewProduct'])->name('product');
     Route::get('/role', [RoleController::class, 'viewRole'])->name('role');
     Route::patch('/role', [RoleController::class, 'updateRole'])->name('role.update');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 require __DIR__.'/auth.php';
