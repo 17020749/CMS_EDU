@@ -2,12 +2,9 @@
 
 use App\Http\Controllers\Api\AuthTokenController;
 use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\ClassroomController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\SemesterController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -32,36 +29,21 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::post('/user' ,[UserController::class, 'insertUser']);
     Route::delete('/user/delete/{id}' ,[UserController::class, 'deleteUser']);
      Route::patch('/user/update/{id}' ,[UserController::class, 'updateUser']);
-      //semester
-      Route::get('/semester',[SemesterController::class, 'getListSemester']);
-      Route::post('/semester',[SemesterController::class, 'insertSemester']);
-      Route::patch('/semester/{id}',[SemesterController::class, 'updateSemester']);
-      Route::delete('/semester/{id}',[SemesterController::class, 'deleteSemester']);
+      //banner
+      Route::get('/banner',[BannerController::class, 'getListSemester']);
+      Route::post('/banner',[BannerController::class, 'insertSemester']);
+      Route::patch('/banner/{id}',[BannerController::class, 'updateSemester']);
+      Route::delete('/banner/{id}',[BannerController::class, 'deleteSemester']);
      //course
-        Route::get('/course',[CourseController::class, 'getListCourse']);
-      Route::post('/course',[CourseController::class, 'insertCourse']);
-      Route::patch('/course/{id}',[CourseController::class, 'updateCourse']);
-      Route::delete('/course/{id}',[CourseController::class, 'deleteCourse']);
-     //department
-        Route::get('/department',[DepartmentController::class, 'getListDepartment']);
-      Route::post('/department',[DepartmentController::class, 'insertDepartment']);
-      Route::patch('/department/{id}',[DepartmentController::class, 'updateDepartment']);
-      Route::delete('/department/{id}',[DepartmentController::class, 'deleteDepartment']);
-     //classroom
-     Route::get('/classroom',[ClassroomController::class, 'getListClassroom']);
-      Route::post('/classroom',[ClassroomController::class, 'insertClassroom']);
-      Route::patch('/classroom/{id}',[ClassroomController::class, 'updateClassroom']);
-      Route::delete('/classroom/{id}',[ClassroomController::class, 'deleteClassroom']);
-     //teacher
-     Route::get('/teacher',[TeacherController::class, 'getListTeacher']);
-      Route::post('/teacher',[TeacherController::class, 'insertTeacher']);
-      Route::patch('/teacher/{id}',[TeacherController::class, 'updateTeacher']);
-      Route::delete('/teacher/{id}',[TeacherController::class, 'deleteTeacher']);
+        Route::get('/category',[CategoryController::class, 'getListCategories']);
+      Route::post('/category',[CategoryController::class, 'insertCategory']);
+      Route::patch('/category/{id}',[CategoryController::class, 'updateCategory']);
+      Route::delete('/category/{id}',[CategoryController::class, 'deleteCategory']);
      //student
-     Route::get('/student',[StudentController::class, 'getListStudent']);
-      Route::post('/student',[StudentController::class, 'insertStudent']);
-      Route::patch('/student/{id}',[StudentController::class, 'updateStudent']);
-      Route::delete('/student/{id}',[StudentController::class, 'deleteStudent']);
+     Route::get('/product',[ProductController::class, 'getListProduct']);
+      Route::post('/product',[ProductController::class, 'insertProduct']);
+      Route::patch('/product/{id}',[ProductController::class, 'updateProduct']);
+      Route::delete('/product/{id}',[ProductController::class, 'deleteProduct']);
 });
     
    

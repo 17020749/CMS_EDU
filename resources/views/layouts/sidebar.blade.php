@@ -13,61 +13,31 @@
         </li>
 
         <li>
-          <x-side-link :href="route('courses')" :active="request()->routeIs('courses')">
+          <x-side-link :href="route('category')" :active="request()->routeIs('category')">
                                     <span class="inline-flex justify-center items-center ml-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
             </span>
-            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Khóa học</span>
+            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Danh mục</span>
                     </x-side-link>
       
         </li>
 
         <li>
-          <x-side-link :href="route('semester')" :active="request()->routeIs('semester')">
+          <x-side-link :href="route('banner')" :active="request()->routeIs('banner')">
                                     <span class="inline-flex justify-center items-center ml-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
             </span>
-            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Banner</span>
+            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Ảnh bìa</span>
                     </x-side-link>
       
         </li>
 
         <li>
-          <x-side-link :href="route('department')" :active="request()->routeIs('department')">
+          <x-side-link :href="route('product')" :active="request()->routeIs('product')">
                                     <span class="inline-flex justify-center items-center ml-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
             </span>
-            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Khoa</span>
-                    </x-side-link>
-      
-        </li>
-
-        <li>
-          <x-side-link :href="route('class')" :active="request()->routeIs('class')">
-                                    <span class="inline-flex justify-center items-center ml-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-            </span>
-            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Lớp</span>
-                    </x-side-link>
-      
-        </li>
-        
-        <li>
-          <x-side-link :href="route('teacher')" :active="request()->routeIs('teacher')">
-                                    <span class="inline-flex justify-center items-center ml-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-            </span>
-            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Giáo viên</span>
-                    </x-side-link>
-      
-        </li>
-
-        <li>
-          <x-side-link :href="route('student')" :active="request()->routeIs('student')">
-                                    <span class="inline-flex justify-center items-center ml-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-            </span>
-            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Sinh viên</span>
+            <span class="ml-2 text-sm tracking-wide truncate duration-300 ease-in-out" :class="isSidebarExpanded ? 'opacity-100' : 'opacity-0'">Sản phẩm</span>
                     </x-side-link>
       
         </li>

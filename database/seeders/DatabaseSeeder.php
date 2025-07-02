@@ -568,102 +568,51 @@ class DatabaseSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-         // tạo học kỳ
-          \App\Models\Db\Semester::factory()->create([
-        'semester_code' => 'HKI',
-        'semester_name' => 'Học kỳ 1',
-        ]);
-          \App\Models\Db\Semester::factory()->create([
-        'semester_code' => 'HKII',
-        'semester_name' => 'Học kỳ 2',
-        ]);
-        // tạo khóa học 
-        \App\Models\Db\Course::factory()->create([
-        'course_code' => 'K60',
-        'course_name' => 'Khóa thứ 60',
-        ]);
-         \App\Models\Db\Course::factory()->create([
-        'course_code' => 'K61',
-        'course_name' => 'Khóa thứ 61',
-        ]);
-         \App\Models\Db\Course::factory()->create([
-        'course_code' => 'K62',
-        'course_name' => 'Khóa thứ 62',
-        ]);
-         \App\Models\Db\Course::factory()->create([
-        'course_code' => 'K63',
-        'course_name' => 'Khóa thứ 63',
-        ]);
-         \App\Models\Db\Course::factory()->create([
-        'course_code' => 'K64',
-        'course_name' => 'Khóa thứ 64',
-        ]);
-        \App\Models\Db\Course::factory()->create([
-        'course_code' => 'K65',
-        'course_name' => 'Khóa thứ 65',
-        ]);
-        \App\Models\Db\Course::factory()->create([
-        'course_code' => 'K66',
-        'course_name' => 'Khóa thứ 66',
-        ]);
-        \App\Models\Db\Course::factory()->create([
-        'course_code' => 'K67',
-        'course_name' => 'Khóa thứ 67',
-        ]);
+        //  // tạo học kỳ
+        //   \App\Models\Db\Semester::factory()->create([
+        // 'semester_code' => 'HKI',
+        // 'semester_name' => 'Học kỳ 1',
+        // ]);
+        //   \App\Models\Db\Semester::factory()->create([
+        // 'semester_code' => 'HKII',
+        // 'semester_name' => 'Học kỳ 2',
+        // ]);
+        // // tạo khóa học 
+        // \App\Models\Db\Category::factory()->create([
+        // 'course_code' => 'K60',
+        // 'course_name' => 'Khóa thứ 60',
+        // ]);
+        //  \App\Models\Db\Category::factory()->create([
+        // 'course_code' => 'K61',
+        // 'course_name' => 'Khóa thứ 61',
+        // ]);
+        //  \App\Models\Db\Category::factory()->create([
+        // 'course_code' => 'K62',
+        // 'course_name' => 'Khóa thứ 62',
+        // ]);
+        //  \App\Models\Db\Category::factory()->create([
+        // 'course_code' => 'K63',
+        // 'course_name' => 'Khóa thứ 63',
+        // ]);
+        //  \App\Models\Db\Category::factory()->create([
+        // 'course_code' => 'K64',
+        // 'course_name' => 'Khóa thứ 64',
+        // ]);
+        // \App\Models\Db\Category::factory()->create([
+        // 'course_code' => 'K65',
+        // 'course_name' => 'Khóa thứ 65',
+        // ]);
+        // \App\Models\Db\Category::factory()->create([
+        // 'course_code' => 'K66',
+        // 'course_name' => 'Khóa thứ 66',
+        // ]);
+        // \App\Models\Db\Category::factory()->create([
+        // 'course_code' => 'K67',
+        // 'course_name' => 'Khóa thứ 67',
+        // ]);
       
-       // tạo khoa
-         \App\Models\Db\Department::factory()->create([
-        'department_code' => 'CNTT',
-        'department_name' => 'Công nghệ thông tin',
-        ]);
-         \App\Models\Db\Department::factory()->create([
-        'department_code' => 'HKVT',
-        'department_name' => 'Hàng không vũ trụ',
-        ]);
-         \App\Models\Db\Department::factory()->create([
-        'department_code' => 'TTNT',
-        'department_name' => 'Trí tuệ nhân tạo',
-        ]);
-         \App\Models\Db\Department::factory()->create([
-        'department_code' => 'KHMT',
-        'department_name' => 'Khoa học máy tính',
-        ]);
-         \App\Models\Db\Department::factory()->create([
-        'department_code' => 'HTTT',
-        'department_name' => 'Hệ thống thông tin',
-        ]);
-          \App\Models\Db\Department::factory()->create([
-        'department_code' => 'MTT&TT',
-        'department_name' => 'Mạng máy tính và truyền thông',
-        ]);
-        // tạo lớp
-          \App\Models\Db\Classroom::factory()->create([
-        'class_code' => 'CA',
-        'class_name' => 'Lớp CA',
-        ]);
-          \App\Models\Db\Classroom::factory()->create([
-        'class_code' => 'CB',
-        'class_name' => 'Lớp CB',
-        ]);
-          \App\Models\Db\Classroom::factory()->create([
-        'class_code' => 'CC',
-        'class_name' => 'Lớp CC',
-        ]);
-          \App\Models\Db\Classroom::factory()->create([
-        'class_code' => 'CD',
-        'class_name' => 'Lớp CD',
-        ]);
-          \App\Models\Db\Classroom::factory()->create([
-        'class_code' => 'CE',
-        'class_name' => 'Lớp CE',
-        ]);
-          \App\Models\Db\Classroom::factory()->create([
-        'class_code' => 'CF',
-        'class_name' => 'Lớp CF',
-        ]);
-       // tạo giáo viên
-       \App\Models\Db\Teacher::factory()->count(50)->create();
-       // tạo sinh viên
-       \App\Models\Db\Student::factory()->count(500)->create();
+ 
+    //    // tạo giáo viên
+    //    \App\Models\Db\Teacher::factory()->count(50)->create();
     }
 }

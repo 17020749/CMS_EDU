@@ -36,6 +36,7 @@
       url: dataDelete.url,
       method: 'DELETE',
       headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
         'Authorization': 'Bearer ' + token
       }
     });
@@ -57,8 +58,8 @@
     toastr.success(response.message);
   });
     break;
-  case 'semester':
-    getListSemester().then(()=> {
+  case 'banner':
+    getListBanner().then(()=> {
       HSOverlay.close(document.getElementById('modal-delete'));
     toastr.success(response.message);
     });
